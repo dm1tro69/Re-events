@@ -1,17 +1,17 @@
 import React from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {Button} from "semantic-ui-react";
-import {DECREMENT_COUNTER, INCREMENT_COUNTER} from "./testReducer";
+import {decrement, increment} from "./testReducer";
 
 const Sandbox = () => {
     const dispatch = useDispatch()
-    const data = useSelector((state)=> state.data)
+    const data = useSelector((state)=> state.test.data)
 return (
    <>
        <h1>Testeing 123</h1>
        <h3>The data is: {data} </h3>
-       <Button onClick={()=> dispatch({type: INCREMENT_COUNTER})} content={'Increment'} color={'green'}/>
-       <Button onClick={()=> dispatch({type: DECREMENT_COUNTER})} content={'Decrement'} color={'red'}/>
+       <Button onClick={()=> dispatch(increment(10))} content={'Increment'} color={'green'}/>
+       <Button onClick={()=> dispatch(decrement(5))} content={'Decrement'} color={'red'}/>
    </>
 )
 }
