@@ -7,12 +7,14 @@ import './app/layout/style.css'
 import App from './app/layout/App.jsx';
 import reportWebVitals from './reportWebVitals';
 import configureStore from "./app/store/configureStore";
+import ScrollToTop from "./app/layout/ScrollToTop";
 
 const store = configureStore()
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
+            <ScrollToTop/>
             <App />
         </BrowserRouter>
     </Provider>
